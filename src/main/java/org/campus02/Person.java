@@ -23,6 +23,7 @@ public class Person {
 		this.weight = weight;
 		this.size = size;
 		setEyeColor(eyeColor);
+		this.salary = salary;
 	}
 
 	// getter + setter => ALT+EINFG -> Getter/Setter
@@ -86,6 +87,7 @@ public class Person {
 			case "blau":
 			case "grün":
 				this.eyeColor = eyeColor;
+				break;
 			default:
 				this.eyeColor = "undefined";
 				break;

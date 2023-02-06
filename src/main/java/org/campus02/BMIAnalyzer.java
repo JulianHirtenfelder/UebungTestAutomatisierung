@@ -9,15 +9,14 @@ public class BMIAnalyzer extends PersonAnalyzer {
         return result;
     }
 
-    public double calcBmi(Person person) {
-        return person.getWeight() / ((person.getSize() / 10.0) * (person.getSize() / 1000.0));
+    public static double calcBmi(Person person) {
+        return Math.round((person.getWeight() / ((person.getSize() / 10.0) * (person.getSize() / 1000.0)))*100.0)/100.0;
     }
 
     @Override
     public void analyze() {
         for (Person person : super.getPersons()) {
-            double bmi = 0;
-            calcBmi(person);
+            double bmi = calcBmi(person);
             Pair<Person, Double> bmiPair = new Pair<>(person, bmi);
             result.add(bmiPair);
         }
